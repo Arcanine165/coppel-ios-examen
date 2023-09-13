@@ -77,7 +77,8 @@ final class MoviesViewViewModel : NSObject{
     }
     
     func fetchMoreMovies(){
-        
+        self.isFetchingMoreMovies = true
+        self.page += 1
         guard self.page <= self.totalPages else {
             footer.stopFetching()
             delegate?.didFailedFetchingMoreMovies()
@@ -92,8 +93,8 @@ final class MoviesViewViewModel : NSObject{
             
             switch result {
             case .success(let data):
-                let movies = data.results
-                let newMovies = data.results.count
+                let movies = self.validateMovies(fetchedMovies: data.results)
+                let newMovies = movies.count
                 let previousTotalMovies = self.movies.count
                 let newTotal = newMovies + previousTotalMovies
                 let newSet =  Array(previousTotalMovies..<newTotal).compactMap { num in
@@ -109,6 +110,16 @@ final class MoviesViewViewModel : NSObject{
             }
         }
         
+        
+    }
+    private func validateMovies(fetchedMovies : [MovieModelResponse]) -> [MovieModelResponse]{
+        var newMovies : [MovieModelResponse] = []
+        for movie in 0..<fetchedMovies.count{
+            if !self.movies.contains(where: {$0.id == fetchedMovies[movie].id}){
+                newMovies.append(fetchedMovies[movie])
+            }
+        }
+        return newMovies
     }
     private func getMovies(category : Route,completion : @escaping (Result<MoviesModelResponse,MVTokenError>)->Void){
         Networking.shared.setRequest(route: category.defaultValue, method: .get,type: MoviesModelResponse.self,parameters: ["page":"\(page)"],completion: completion)
@@ -154,21 +165,15 @@ extension MoviesViewViewModel : UICollectionViewDelegate,UICollectionViewDelegat
         let contenSize = scrollView.contentSize.height
         
         let totalScrollViewHeigth = scrollView.frame.size.height
-        let bottom = (contenSize-totalScrollViewHeigth+50)
+        let bottom = (contenSize-totalScrollViewHeigth+10)
         if offset >= bottom{
             self.delegate?.didStartFetchingMoreMovies()
-            Timer.scheduledTimer(withTimeInterval: 0.6, repeats: false) {[weak self] timer in
-                
-                guard let self = self else {
-                    return
-                }
-                if self.isFetchingMoreMovies == false {
-                    self.isFetchingMoreMovies = true
-                    self.page += 1
-                    self.fetchMoreMovies()
-                }
-                timer.invalidate()
+            guard !self.isFetchingMoreMovies else {
+                return
             }
+            
+            self.fetchMoreMovies()
+           
         
             
         }
