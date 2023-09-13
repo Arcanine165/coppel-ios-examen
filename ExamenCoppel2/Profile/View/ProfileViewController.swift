@@ -21,7 +21,7 @@ class ProfileViewController: UIViewController {
     }()
      lazy var favoriteHeader : UILabel = {
         let tv = UILabel()
-        tv.text = "Peliculas Favoritas"
+         tv.text = Constants.Profile.favoritesHeader
         tv.font = UIFont.systemFont(ofSize: 26)
          tv.textColor = .systemGreen
         
@@ -46,7 +46,7 @@ class ProfileViewController: UIViewController {
      lazy var profilePicture : UIImageView = {
         let imv = UIImageView()
          imv.tintColor = .systemGreen
-         imv.image = UIImage(systemName: "person.fill")!.withRenderingMode(.alwaysTemplate)
+         imv.image = Constants.Profile.profileImage
         imv.layer.cornerRadius = 30
         imv.contentMode = .scaleToFill
         imv.clipsToBounds = true
@@ -85,7 +85,7 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .yellow
         // Do any additional setup after loading the view.
-        title = "Profile"
+        title = Constants.Profile.title
         viewModel.delegate = self
         favoriteMoviesCollectionView.dataSource = viewModel
         favoriteMoviesCollectionView.delegate = viewModel

@@ -31,4 +31,10 @@ struct Constants {
         static let onTvSegment = "On TV"
         static let airingTodaySegment = "Airing Today"
     }
+    struct Profile {
+        private init(){}
+        static let title = "Profile"
+        static let profileImage = UIImage(systemName: "person.fill")!.withRenderingMode(.alwaysTemplate)
+        static let favoritesHeader = "Favorite Movies"
+    }
 }
