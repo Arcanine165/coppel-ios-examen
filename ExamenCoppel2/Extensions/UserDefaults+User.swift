@@ -8,14 +8,17 @@
 import Foundation
 extension UserDefaults {
     enum Keys : String{
-        case token = "Token"
-        case username = "Username"
+        case token
+        case username
+        case id
         var rawValue: String {
             switch self {
             case.token:
                 return "Token"
             case.username:
                 return "username"
+            case .id:
+                return "id"
             }
         }
     }
@@ -34,6 +37,14 @@ extension UserDefaults {
         }
         set {
             UserDefaults.standard.set(newValue, forKey: Keys.username.rawValue)
+        }
+    }
+    var id : Int? {
+        get {
+            return UserDefaults.standard.integer(forKey: Keys.id.rawValue)
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: Keys.id.rawValue)
         }
     }
     

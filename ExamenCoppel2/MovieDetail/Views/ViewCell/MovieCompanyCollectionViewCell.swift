@@ -75,7 +75,7 @@ class MovieCompanyCollectionViewCell: UICollectionViewCell {
         cardView.addSubview(companyName)
         cardView.addSubview(imageView)
         cardView.anchor(top: topAnchor,left: leftAnchor,bottom: bottomAnchor,right: rightAnchor)
-        companyName.anchor(left: leftAnchor,bottom: bottomAnchor,right: rightAnchor,height: 30)
-        imageView.anchor(top: topAnchor,left: leftAnchor,bottom: companyName.topAnchor,right: rightAnchor,width: 150, height: 150)
+        companyName.anchor(left: leftAnchor,bottom: bottomAnchor,right: rightAnchor)
+        imageView.anchor(top: topAnchor,left: leftAnchor,bottom: companyName.topAnchor,right: rightAnchor)
     }
 }

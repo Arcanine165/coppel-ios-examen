@@ -66,7 +66,6 @@ final class Networking {
         guard let request = createRequest(route: route, method: method,parameters: parameters) else {
             return
         }
-        print(request.url?.absoluteString)
         URLSession.shared.dataTask(with: request){[weak self] data,response,error in
             guard let data = data, error == nil else {
                 return
@@ -100,13 +99,11 @@ final class Networking {
                     return URLQueryItem(name: key, value: value as? String)
                 })
                 urlRequest.url = urlComponents?.url
-                print(urlRequest.url)
             case .post:
                 let json = try? JSONSerialization.data(withJSONObject: params)
                 urlRequest.httpBody = json
             }
         }
-        print(urlRequest.url?.absoluteString)
         return urlRequest
     }
     private func decodeData<T:Codable>(data : Data, type : T.Type, completion : @escaping ((Result<T,MVTokenError>)->Void)){

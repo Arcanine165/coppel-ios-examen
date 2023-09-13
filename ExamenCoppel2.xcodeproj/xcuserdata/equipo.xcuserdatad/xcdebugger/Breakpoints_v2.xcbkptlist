@@ -174,8 +174,8 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "start()"
             landmarkType = "7">
          </BreakpointContent>
@@ -190,10 +190,10 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "AppCoordinator"
-            landmarkType = "3">
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "start()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -332,8 +332,8 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "showLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -348,8 +348,8 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "showLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -364,8 +364,8 @@
             filePath = "ExamenCoppel2/Coordinator/Coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "popCoordinator(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -380,79 +380,32 @@
             filePath = "ExamenCoppel2/Coordinator/Coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "popCoordinator(_:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "E7BA7AD4-D119-4F76-9A5F-F32540D9FDC0"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamenCoppel2/Coordinator/Coordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "popCoordinator(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E7BA7AD4-D119-4F76-9A5F-F32540D9FDC0 - db8633504e8b502e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ExamenCoppel2.Coordinator.popCoordinator(ExamenCoppel2.Coordinator) -&gt; ()"
-                  moduleName = "ExamenCoppel2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/equipo/Desktop/Development/ExamenCoppel2/ExamenCoppel2/Coordinator/Coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "56">
-               </Location>
-               <Location
-                  uuid = "E7BA7AD4-D119-4F76-9A5F-F32540D9FDC0 - db8633504e8b502e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ExamenCoppel2.Coordinator.popCoordinator(ExamenCoppel2.Coordinator) -&gt; ()"
-                  moduleName = "ExamenCoppel2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/equipo/Desktop/Development/ExamenCoppel2/ExamenCoppel2/Coordinator/Coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "E7BA7AD4-D119-4F76-9A5F-F32540D9FDC0 - 7437b045710863de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (ExamenCoppel2.Coordinator) -&gt; Swift.Bool in ExamenCoppel2.Coordinator.popCoordinator(ExamenCoppel2.Coordinator) -&gt; ()"
-                  moduleName = "ExamenCoppel2"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/equipo/Desktop/Development/ExamenCoppel2/ExamenCoppel2/Coordinator/Coordinator.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "48"
-                  endingLineNumber = "48"
-                  offsetFromSymbolStart = "44">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "A5ED9FEC-10F2-4635-B27A-F9405F28CE76"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "showLogin()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DF0F4921-3FDB-4C83-ADAF-A32E451912C9"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -468,7 +421,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DF0F4921-3FDB-4C83-ADAF-A32E451912C9"
+            uuid = "87263E24-9DA5-4593-9238-6E6857523177"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -477,22 +430,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
             endingLineNumber = "55"
-            landmarkName = "showLogin()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "87263E24-9DA5-4593-9238-6E6857523177"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
             landmarkName = "showLogin()"
             landmarkType = "7">
          </BreakpointContent>
@@ -523,10 +460,10 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "AppCoordinator"
-            landmarkType = "3">
+            landmarkType = "21">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -539,10 +476,10 @@
             filePath = "ExamenCoppel2/Coordinator/AppCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "AppCoordinator"
-            landmarkType = "21">
+            startingLineNumber = "80"
+            endingLineNumber = "80"
+            landmarkName = "tabBarController(_:didSelect:)"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "24B9186C-A75A-4CF3-A0F8-92C92E925214 - 9bb057b3afdaf603"
@@ -587,8 +524,8 @@
             filePath = "ExamenCoppel2/Coordinator/Coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "navigationController(_:willShow:animated:)"
             landmarkType = "7">
             <Locations>
@@ -635,8 +572,8 @@
             filePath = "ExamenCoppel2/Coordinator/Coordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
             landmarkName = "Coordinator"
             landmarkType = "3">
          </BreakpointContent>
@@ -651,8 +588,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "collectionView(_:layout:referenceSizeForFooterInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -667,8 +604,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "201"
-            endingLineNumber = "201"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "collectionView(_:layout:referenceSizeForFooterInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -683,8 +620,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "167"
-            endingLineNumber = "167"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "scrollViewDidScroll(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -703,22 +640,6 @@
             endingLineNumber = "54"
             landmarkName = "MoviesCoordinator"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "EC6958C5-A241-43DC-8081-A8C455B84559"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ExamenCoppel2/Movies/Coordinator/MoviesCoordinator.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "51"
-            endingLineNumber = "51"
-            landmarkName = "setupNavigationController()"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -922,8 +843,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
+            startingLineNumber = "85"
+            endingLineNumber = "85"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -938,8 +859,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "getMovies(category:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,8 +875,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -970,8 +891,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -986,8 +907,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
             <Locations>
@@ -1034,8 +955,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1050,8 +971,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "109"
+            endingLineNumber = "109"
             landmarkName = "fetchMoreMovies()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1066,8 +987,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "movies"
             landmarkType = "24">
          </BreakpointContent>
@@ -1082,8 +1003,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "200"
-            endingLineNumber = "200"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "collectionView(_:layout:referenceSizeForFooterInSection:)"
             landmarkType = "7">
             <Locations>
@@ -1145,8 +1066,8 @@
             filePath = "ExamenCoppel2/Movies/ViewModel/MoviesViewViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "fetchData(_:)"
             landmarkType = "7">
          </BreakpointContent>

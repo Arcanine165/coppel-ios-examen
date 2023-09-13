@@ -38,7 +38,6 @@ final class MoviesCoordinator : Coordinator {
     }
     override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if let moviesViewController = viewController as? MoviesViewController {
-            // Muestra la barra de navegación cuando se muestra MoviesViewController
             moviesViewController.navigationController?.setNavigationBarHidden(false, animated: animated)
         }
     }
@@ -48,6 +47,7 @@ final class MoviesCoordinator : Coordinator {
         navigationController.tabBarItem.title = "Movies"
         
         navigationController.tabBarItem.image = UIImage(systemName: "house.fill")!
+        
     }
     
    

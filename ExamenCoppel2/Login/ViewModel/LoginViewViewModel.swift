@@ -21,7 +21,9 @@ final class LoginViewViewModel {
                 self?.getAccountDetail(params: params) { result in
                     switch result {
                     case .success(let userData):
-                        UserDefaults.standard.username = userData.username
+                        let username = userData.username
+                        let userId = userData.id
+                        self?.saveUserInfo(sessionId: session_id, username:username,id : userId)
                         self?.didLoginSucces?()
                     case .failure(let failure):
                         self?.didLoginFailed?(failure.status_message)
@@ -35,11 +37,16 @@ final class LoginViewViewModel {
         }
     }
     
+    private func saveUserInfo(sessionId: String,username : String,id : Int){
+        UserDefaults.standard.token = sessionId
+        UserDefaults.standard.username = username
+        UserDefaults.standard.id = id
+        
+    }
+    
     private func getAccountDetail(params : [String:Any]? = nil,completion : @escaping (Result<UserDetailResponse,MVTokenError>)->Void){
         Networking.shared.setRequest(route: Route.accountDetail.defaultValue, method: .get, type: UserDetailResponse.self, parameters: params,completion: completion)
     }
     
-    deinit {
-        print("DEBUG: LOGINVIEWVIEWMODEL DEINIT")
-    }
+   
 }

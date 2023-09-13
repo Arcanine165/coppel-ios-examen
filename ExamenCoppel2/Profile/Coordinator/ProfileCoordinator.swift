@@ -16,8 +16,22 @@ final class ProfileCoordinator : Coordinator{
     override func start() {
         let profileViewModel = ProfileViewModel()
         let profileViewController = ProfileViewController(viewModel: profileViewModel)
-        navigationController.pushViewController(profileViewController, animated: true)
+        profileViewController.viewModel.didSelectMovie = {[weak self] movie in
+            self?.showDetail(movieId:movie.id)
+
+        }
         setupNavigationController()
+        navigationController.pushViewController(profileViewController, animated: true)
+    }
+    private func showDetail(movieId : Int){
+        
+        let viewModel = MovieDetailViewModel(id: movieId)
+        
+        let movieDetailController = MovieDetailViewController(viewModel: viewModel)
+        movieDetailController.hidesBottomBarWhenPushed = true
+        
+        navigationController.pushViewController(movieDetailController, animated: true)
+        
     }
     
     private func setupNavigationController(){

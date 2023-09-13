@@ -18,7 +18,6 @@ class FooterCollectionReusableView: UICollectionReusableView {
     }()
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("creando footer")
         setupView()
         setupConstraints()
     }

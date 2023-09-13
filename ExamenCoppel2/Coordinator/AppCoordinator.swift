@@ -29,13 +29,11 @@ final class AppCoordinator : Coordinator{
         setupTabBar()
         
     }
+    
     override func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
-        if viewController is MovieDetailViewController {
-        }else{
-        }
+       
     }
     override func navigationController(_ navigationController: UINavigationController, didShow viewController: UIViewController, animated: Bool) {
-        print("didshow")
     }
     
     override func start(){
@@ -73,6 +71,7 @@ final class AppCoordinator : Coordinator{
         appearance.backgroundColor = .navigationBackGroundColor
         tabBarController.tabBar.standardAppearance = appearance
         tabBarController.tabBar.scrollEdgeAppearance = appearance
+        tabBarController.tabBar.tintColor = .systemGreen
     }
    
     
@@ -80,8 +79,7 @@ final class AppCoordinator : Coordinator{
 extension AppCoordinator : UITabBarControllerDelegate {
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         tabBarController.selectedViewController = viewController
-        print(viewController)
-        
+
     }
 }
 

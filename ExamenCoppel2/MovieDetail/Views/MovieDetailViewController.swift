@@ -96,6 +96,13 @@ class MovieDetailViewController: UIViewController {
     
     lazy var favoriteButton : UIButton = {
         let btn = UIButton()
+        let imageForUnselected = UIImage(systemName: "heart")!.withTintColor(.systemGreen, renderingMode: .alwaysTemplate)
+        let imageForSelected = UIImage(systemName: "heart.fill")!.withTintColor(.systemGreen, renderingMode: .alwaysTemplate)
+        btn.tintColor = .systemGreen
+        btn.setBackgroundImage(imageForUnselected, for: .normal)
+        btn.setBackgroundImage(imageForSelected, for: .selected)
+        btn.addTarget(self, action: #selector(setFavorite), for: .touchUpInside)
+        
         return btn
     }()
     
@@ -124,6 +131,10 @@ class MovieDetailViewController: UIViewController {
         setup()
 
     }
+    override func viewDidAppear(_ animated: Bool) {
+        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+50)
+
+    }
     
     // MARK: - SetupMovie
 
@@ -150,16 +161,14 @@ class MovieDetailViewController: UIViewController {
     private func setup(){
         view.addSubview(scrollView)
         view.addSubview(spinner)
+        view.addSubview(favoriteButton)
         scrollView.addSubViews(movieViewContainer,stackView,movieDescriptionLabel,producesCollectionView,producesTitle)
         setConstraints()
         
     }
-    override func viewDidAppear(_ animated: Bool) {
-        scrollView.contentSize = CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height+50)
-
-    }
+   
     private func setConstraints(){
-        
+
         spinner.center(inView: view)
         scrollView.anchor(top: view.topAnchor,left: view.leftAnchor,bottom: view.bottomAnchor,right: view.rightAnchor)
         movieViewContainer.anchor(top: scrollView.topAnchor,left: scrollView.leftAnchor,right: scrollView.rightAnchor,width: view.frame.size.width,height: 400)
@@ -170,16 +179,21 @@ class MovieDetailViewController: UIViewController {
         producesTitle.anchor(top: movieDescriptionLabel.bottomAnchor,left: view.leftAnchor,right: view.rightAnchor,paddingLeft: 8,paddingBottom: 16,paddingRight: 8)
         
         producesCollectionView.anchor(top: producesTitle.bottomAnchor,left: scrollView.leftAnchor,right: scrollView.rightAnchor,height: 150)
-        
+        favoriteButton.anchor(top: view.safeAreaLayoutGuide.topAnchor,right: view.safeAreaLayoutGuide.rightAnchor,paddingTop: 8,paddingRight: 8,width: 30,height: 30)
+
         
     }
+    // MARK: - OBJC
+   @objc private func setFavorite(){
+       favoriteButton.isSelected = !favoriteButton.isSelected
+    }
+
 
 }
 // MARK: - Extensions
 
 extension MovieDetailViewController : MovieDetailDelegate {
     func didLoadCompanies() {
-        print("me cargue")
         producesTitle.isHidden = false
         DispatchQueue.main.async {[weak self] in
             

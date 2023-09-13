@@ -25,9 +25,7 @@ protocol MoviesViewModelDelegate : class {
 
 final class MoviesViewViewModel : NSObject{
     
-    override init() {
-        print("DEBUGG INIT VIEWVIEWMODEL")
-    }
+   
     
     // MARK: - Attributes
 
@@ -38,9 +36,10 @@ final class MoviesViewViewModel : NSObject{
     var category : Route = Route.popular
     var isFetchingMoreMovies : Bool = false
     var page : Int = 1
-    var totalPages : Int = 500
+    var totalPages : Int = 500 // el response dice otro total, pero en postman dice que no puede exceder de 500
     var changeState = false
     var footer : FooterCollectionReusableView!
+    
     var movies : [MovieModelResponse] = [] {
         didSet{
             for movie in movies {
@@ -53,12 +52,10 @@ final class MoviesViewViewModel : NSObject{
                 }
                 
             }
-            print(movieCellViewModels.count)
         }
     }
     
     func fetchData(_ category : Route){
-        print("DEBUGG: fetchinitialdata")
 
         movieCellViewModels = []
         movies = []
@@ -70,12 +67,10 @@ final class MoviesViewViewModel : NSObject{
             case .success(let data):
                 let results = data.results
                 if results.isEmpty {
-                    print("nimodo")
                     self?.delegate?.didFailedFetchingMoreMovies()
                     
                 }else{
                     self?.movies = results
-                    print(results)
                     self?.delegate?.didFecthInitialMoviesSuccessFully()
                     self?.page = data.page
                     self?.changeState = false
@@ -88,11 +83,8 @@ final class MoviesViewViewModel : NSObject{
     }
     
     func fetchMoreMovies(){
-        print("DEBUGG: FETCHINGMOREMOVIES")
         
-        print("actual \(self.page) totalPage : \(totalPages)")
         guard self.page <= self.totalPages else {
-            print("no buscara mas")
             footer.stopFetching()
             delegate?.didFailedFetchingMoreMovies()
             return
@@ -109,13 +101,11 @@ final class MoviesViewViewModel : NSObject{
                 let newMovies = data.results.count
                 let previousTotalMovies = self.movies.count
                 let newTotal = newMovies + previousTotalMovies
-                print(newTotal)
                 let newSet =  Array(previousTotalMovies..<newTotal).compactMap { num in
                     return IndexPath(item: num, section: 0)
                 }
-                
+                print(movies.count)
                 self.movies.append(contentsOf: movies)
-               
                 self.delegate?.didFetchMoreMovies(newSet : newSet)
                 self.isFetchingMoreMovies = false
                 
@@ -130,9 +120,7 @@ final class MoviesViewViewModel : NSObject{
         Networking.shared.setRequest(route: category.defaultValue, method: .get,type: MoviesModelResponse.self,parameters: ["page":"\(page)"],completion: completion)
     }
     
-    deinit{
-        print("DEBUGG Movies deinit")
-    }
+   
     
 }
 extension MoviesViewViewModel : UICollectionViewDelegate,UICollectionViewDelegateFlowLayout,UICollectionViewDataSource{
@@ -160,7 +148,6 @@ extension MoviesViewViewModel : UICollectionViewDelegate,UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cell = movies[indexPath.row]
-        print("diste click")
         didSelectMovie?(cell)
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -198,7 +185,6 @@ extension MoviesViewViewModel : UICollectionViewDelegate,UICollectionViewDelegat
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
         guard !isFetchingMoreMovies else {
-            print("zero")
             return .zero
         }
         
