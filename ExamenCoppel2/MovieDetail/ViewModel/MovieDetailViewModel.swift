@@ -27,10 +27,9 @@ final class MovieDetailViewModel : NSObject {
         Networking.shared.setRequest(route: route, method: .get, type: MovieDetailResponse.self) {[weak self] result in
             switch result {
             case .success(let movie):
-                let companies = movie.production_companies
                 
-                if companies != nil {
-                    self?.companies.append(contentsOf: companies!)
+                if let companies = movie.production_companies,companies.count > 0 {
+                    self?.companies.append(contentsOf: companies)
                     self?.delegate?.didLoadCompanies()
                 }
                 

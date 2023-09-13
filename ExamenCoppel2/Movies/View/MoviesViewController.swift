@@ -58,15 +58,7 @@ class MoviesViewController: UIViewController {
        
     }
   
-    // MARK: - setup viewModel listeners
-    func setupListeners(){
-        viewModel.didFecthSuccesFully = { [weak self] in
-            self?.reloadData()
-        }
-    }
-    func reloadData(){
-        moviesCollectionView.reloadData()
-    }
+    
     // MARK: - Constraints
 
     private func addConstraints(){
@@ -107,8 +99,8 @@ class MoviesViewController: UIViewController {
         default:
             print("Invalid index")
         }
-        DispatchQueue.main.async {
-            self.reloadData()
+        DispatchQueue.main.async {[weak self] in
+            self?.moviesCollectionView.reloadData()
         }
     }
  

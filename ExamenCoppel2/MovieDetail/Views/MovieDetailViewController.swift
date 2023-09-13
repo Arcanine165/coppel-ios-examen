@@ -30,11 +30,7 @@ class MovieDetailViewController: UIViewController {
         return scrollView
     }()
     
-    var mainStackView : UIStackView = {
-       let stackView = UIStackView()
-        stackView.axis = .vertical
-        return stackView
-    }()
+   
     var movieViewContainer : UIImageView = {
         let imv = UIImageView()
         imv.contentMode = .scaleToFill
@@ -45,7 +41,7 @@ class MovieDetailViewController: UIViewController {
                 
         return imv
     }()
-    lazy var stackView : UIStackView = {
+    lazy var movieInfoStackView : UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [movieLengthView,movieRateView,movieReleaseDateView])
         stackView.axis = .horizontal
         stackView.distribution = .equalSpacing
@@ -56,7 +52,7 @@ class MovieDetailViewController: UIViewController {
         let view = Utils.shared.propertiesViewContainer(image: "clock", label: movieDuration)
         return view
     }()
-    var movieDuration : UILabel = {
+    lazy var movieDuration : UILabel = {
         let label = UILabel()
         label.textColor = .white
 
@@ -66,7 +62,7 @@ class MovieDetailViewController: UIViewController {
         let view = Utils.shared.propertiesViewContainer(image: "star.circle", label: movieRate)
         return view
     }()
-    var movieRate : UILabel = {
+    lazy var movieRate : UILabel = {
         let label = UILabel()
         label.textColor = .white
         return label
@@ -75,13 +71,13 @@ class MovieDetailViewController: UIViewController {
         let view = Utils.shared.propertiesViewContainer(image: "calendar", label: movieRelease)
         return view
     }()
-    var movieRelease : UILabel = {
+    lazy var movieRelease : UILabel = {
         let label = UILabel()
         label.textColor = .white
         return label
     }()
     
-    var movieDescriptionLabel : UILabel = {
+   lazy var movieDescriptionLabel : UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.contentMode = .topLeft
@@ -162,7 +158,7 @@ class MovieDetailViewController: UIViewController {
         view.addSubview(scrollView)
         view.addSubview(spinner)
         view.addSubview(favoriteButton)
-        scrollView.addSubViews(movieViewContainer,stackView,movieDescriptionLabel,producesCollectionView,producesTitle)
+        scrollView.addSubViews(movieViewContainer,movieInfoStackView,movieDescriptionLabel,producesCollectionView,producesTitle)
         setConstraints()
         
     }
@@ -172,9 +168,9 @@ class MovieDetailViewController: UIViewController {
         spinner.center(inView: view)
         scrollView.anchor(top: view.topAnchor,left: view.leftAnchor,bottom: view.bottomAnchor,right: view.rightAnchor)
         movieViewContainer.anchor(top: scrollView.topAnchor,left: scrollView.leftAnchor,right: scrollView.rightAnchor,width: view.frame.size.width,height: 400)
-        stackView.anchor(top: movieViewContainer.bottomAnchor,left: scrollView.leftAnchor,right: scrollView.rightAnchor,paddingTop: 8,paddingLeft: 16,paddingBottom: 16,paddingRight: 16,height: 20)
+        movieInfoStackView.anchor(top: movieViewContainer.bottomAnchor,left: scrollView.leftAnchor,right: scrollView.rightAnchor,paddingTop: 8,paddingLeft: 16,paddingBottom: 16,paddingRight: 16,height: 20)
         
-        movieDescriptionLabel.anchor(top: stackView.bottomAnchor,left: scrollView.leftAnchor,bottom: scrollView.bottomAnchor,right: scrollView.rightAnchor,paddingTop: 8,paddingLeft: 8,paddingRight: 8,height: 150)
+        movieDescriptionLabel.anchor(top: movieInfoStackView.bottomAnchor,left: scrollView.leftAnchor,bottom: scrollView.bottomAnchor,right: scrollView.rightAnchor,paddingTop: 8,paddingLeft: 8,paddingRight: 8,height: 150)
         
         producesTitle.anchor(top: movieDescriptionLabel.bottomAnchor,left: view.leftAnchor,right: view.rightAnchor,paddingLeft: 8,paddingBottom: 16,paddingRight: 8)
         
@@ -196,7 +192,6 @@ extension MovieDetailViewController : MovieDetailDelegate {
     func didLoadCompanies() {
         producesTitle.isHidden = false
         DispatchQueue.main.async {[weak self] in
-            
             self?.producesCollectionView.reloadData()
         }
     }

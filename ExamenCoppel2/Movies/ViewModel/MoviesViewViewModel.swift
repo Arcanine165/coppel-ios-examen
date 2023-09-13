@@ -29,7 +29,6 @@ final class MoviesViewViewModel : NSObject{
     
     // MARK: - Attributes
 
-    var didFecthSuccesFully : (()->Void)?
     var didSelectMovie : ((MovieModelResponse)->Void)?
     var movieCellViewModels : [MovieCellViewModel] = []
     weak var delegate : MoviesViewModelDelegate?
@@ -56,8 +55,8 @@ final class MoviesViewViewModel : NSObject{
         movieCellViewModels = []
         movies = []
         page = 2
-        let categoryData = category.defaultValue
-        Networking.shared.setRequest(route: categoryData, method: .get,type: MoviesModelResponse.self,parameters: ["page":"\(page)"]) {[weak self] result in
+        
+        getMovies(category: category) {[weak self] result in
             switch result {
             case .success(let data):
                 let results = data.results
@@ -74,6 +73,7 @@ final class MoviesViewViewModel : NSObject{
                 print(failure)
             }
         }
+        
     }
     
     func fetchMoreMovies(){
