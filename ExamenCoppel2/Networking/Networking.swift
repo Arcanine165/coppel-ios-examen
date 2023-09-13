@@ -66,6 +66,7 @@ final class Networking {
         guard let request = createRequest(route: route, method: method,parameters: parameters) else {
             return
         }
+        print(request.url)
         URLSession.shared.dataTask(with: request){[weak self] data,response,error in
             guard let data = data, error == nil else {
                 return

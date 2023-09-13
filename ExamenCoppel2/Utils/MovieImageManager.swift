@@ -10,6 +10,7 @@ import UIKit
 
 final class MovieImageManager {
     private init(){}
+    
     static let shared = MovieImageManager()
     
     private var imagesUrl = "https://image.tmdb.org/t/p/w500"

@@ -8,6 +8,7 @@
 import Foundation
 
 final class LoginViewViewModel {
+    
     var didLoginSucces : (()->Void)?
     var didLoginFailed : ((String)->Void)?
     
